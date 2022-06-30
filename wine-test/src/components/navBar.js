@@ -39,6 +39,7 @@ function NavBar () {
       color: #D14B8F;
     }
   }
+  cursor: pointer;
   background-color: #FFFFFF;
   border: none;
   font-family: 'Neo Sans Std';
@@ -52,20 +53,24 @@ function NavBar () {
   flex-grow: 0;
   `;
   const WineImg = styled.button`
+  border-radius: 50%;
   border: none;
-  background-color: #FFFFFF;
+  cursor: pointer;
+  background-color: #F6B554;
   margin-left: 50px;
   width: 56px;
   `;
 
   const AvatarImg = styled.button`
+  cursor: pointer;
   border: none;
   background-color: #FFFFFF;
   margin-left: 50px;
   width: 56px;
   `;
   
-  const Button = styled.button`
+  const Buscar = styled.button`
+  cursor: pointer;
   margin-left: 200px;
   border: none;
   background-color: #FFFFFF;
@@ -85,7 +90,7 @@ function NavBar () {
         <Pages><p>Eventos</p></Pages>
       </DivPages>
       <div>
-        <Button><img src={busca} alt="Buscar" /></Button>
+        <Buscar><img src={busca} alt="Buscar" /></Buscar>
         <AvatarImg><img src={conta} alt="conta" /></AvatarImg>
         <WineImg><img src={wineImg} alt="Wine imagem"/></WineImg>
       </div>
