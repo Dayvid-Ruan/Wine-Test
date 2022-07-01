@@ -1,22 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import MyContext from "../context/MyContext";
 
-import NavBar from "../components/navBar";
+import Header from "../components/Header";
 import FilterPrice from "../components/filterPrice";
 import ListProducts from "../components/listProducts";
-import styled from "styled-components";
-
-
-const Catalago = styled.div`
-  margin-left: 25%;
-  margin-bottom: 2%;
-`;
+import {QuantProduct, Catalago } from "../styles/productPageStyle";
 
 function Products () {
+  const { products } = useContext(MyContext);
+
   return (
     <div>
-      <NavBar />
+      <Header />
       <FilterPrice />
       <Catalago>
+        {
+          <QuantProduct>{`${products.length} produtos encontrados`}</QuantProduct >
+        }
         <ListProducts />
       </Catalago>
     </div>
