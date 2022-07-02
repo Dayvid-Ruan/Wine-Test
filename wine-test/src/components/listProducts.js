@@ -1,6 +1,4 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import PropTypes from "prop-types";
 import { 
   Global, Card, ImgProduct, Name, PriceAndDiscount,
   PriceNotMemberAndDiscount, PriceMemberAndText, TextPriceMember,
@@ -9,29 +7,14 @@ import {
 import MyContext from "../context/MyContext";
 
 function ListProducts () {
-  const { products } = useContext(MyContext);
-  const navigate = useNavigate();
+  const { filterProduct, hanlderClickInfo } = useContext(MyContext);
   const [itensPerPage, ] = useState(9);
   const [currentPage, setCurrebtPage ] = useState(0);
 
-  const pages = Math.ceil(products.length / itensPerPage);
+  const pages = Math.ceil(filterProduct.length / itensPerPage);
   const startIndex = currentPage * itensPerPage;
   const endIndex = startIndex + itensPerPage;
-  const currentItens = products.slice(startIndex, endIndex);
-
-
-  async function hanlderClick(e) {
-    e.preventDefault();
-    console.log(products);
-    navigate("/product/:id");
-  }
-
-  async function handlerClickAdd (e) {
-    e.preventDefault();
-    currentItens.filter(pro => (
-      pro.id
-    ));
-  }
+  const currentItens = filterProduct.slice(startIndex, endIndex);
 
   return(
     <div>
@@ -39,7 +22,7 @@ function ListProducts () {
         currentItens.map(product => (
           <Global key={product.id}>
             <Card
-              onClick={ hanlderClick }
+              onClick={ hanlderClickInfo }
             >
               <ImgProduct src={product.image } />
               <Name>{ product.name }</Name>
@@ -55,7 +38,6 @@ function ListProducts () {
             </Card>
             <DivButton>
               <ButtonAdd
-                onClick={handlerClickAdd}
               >Adicionar</ButtonAdd>
             </DivButton>
           </Global>
@@ -80,11 +62,3 @@ function ListProducts () {
 }
 
 export default ListProducts;
-
-ListProducts.defaultProps = {
-  orderInfo: {},
-};
-
-ListProducts.propTypes = {
-  orderInfo: PropTypes.shape(PropTypes.object),
-};
