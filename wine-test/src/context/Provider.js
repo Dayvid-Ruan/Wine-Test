@@ -19,6 +19,7 @@ function Provider ({ children }) {
       const results = await fetch(response).then((res) => res.json());
       setProducts(results.items);
       setFilterProduct(results.items);
+      console.log(products);
     };
     getProducts();
   }, []);
@@ -45,14 +46,31 @@ function Provider ({ children }) {
     });
   }
 
-  function handlerClick (e) {
+  function handlerClickProducts (e) {
     e.preventDefault();
-    navigate("/products");
+    navigate("/produtos");
   }
 
-  function hanlderClickInfo(e) {
+  function handerClickInfo(e) {
     e.preventDefault();
-    navigate("/product/:id");
+    navigate("/produtos/:id");
+  }  
+
+  function handerClickProducers(e) {
+    e.preventDefault();
+    navigate("/produtores");
+  }  
+  function handerClickOffers(e) {
+    e.preventDefault();
+    navigate("/ofertas");
+  }  
+  function handerClickClub(e) {
+    e.preventDefault();
+    navigate("/clube");
+  }  
+  function handerClickEvents(e) {
+    e.preventDefault();
+    navigate("/eventos");
   }
 
   const contextValue = {
@@ -60,8 +78,12 @@ function Provider ({ children }) {
     infoProduct,
     filterProduct,
     handleChange,
-    handlerClick,
-    hanlderClickInfo,
+    handlerClickProducts,
+    handerClickInfo,
+    handerClickClub,
+    handerClickEvents,
+    handerClickOffers,
+    handerClickProducers,
   };
 
   return(

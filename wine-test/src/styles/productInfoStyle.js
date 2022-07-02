@@ -137,3 +137,18 @@ line-height: 19px;
 text-transform: uppercase;
 color: #888888;
 `;
+
+export const FlagInfo = styled.img`
+width: 15px;
+margin-right: 5px;
+`;
+
+export const TextInfo4 = styled.p`
+font-family: 'Lato';
+margin-right: 4px;
+color: #555555;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 24px;
+`;

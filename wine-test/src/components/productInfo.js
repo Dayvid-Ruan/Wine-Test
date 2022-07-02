@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import MyContext from "../context/MyContext";
 import frame from "../img/Frame 36.png";
-import { Generate, ColumInfo, Sumary,
+import { Generate, ColumInfo, Sumary, FlagInfo, TextInfo4,
   TextInfo1, TextInfo2, TextInfo3, Arrow, ButtonFrame,
   NameInfo, CommentSommelier, Comment, ButtonAdicionar,
   ButtonAdd, ButtonSub, PriceMember, PriceNotMember
@@ -9,12 +9,12 @@ import { Generate, ColumInfo, Sumary,
 
 
 function ProductInfo () {
-  const { infoProduct, handlerClick } = useContext(MyContext);
+  const { infoProduct, handlerClickProducts } = useContext(MyContext);
 
   return(
     <div>
       <ButtonFrame
-        onClick={ handlerClick}
+        onClick={ handlerClickProducts}
       >
         <img src={frame} alt="Voltar" />
       </ButtonFrame>
@@ -35,12 +35,13 @@ function ProductInfo () {
               <div>
                 <NameInfo>{product.name}</NameInfo>
                 <Sumary>
-                  <p>{product.country}</p>
-                  <p>{product.type}</p>
-                  <p>{product.classification}</p>
-                  <p>{product.size}</p>
-                  <p>{product.rating}</p>
-                  <p>({product.avaliations})</p>
+                  <FlagInfo src={product.flag} />
+                  <TextInfo4>{product.country}</TextInfo4> 
+                  <TextInfo4>{product.type}</TextInfo4>
+                  <TextInfo4>{product.classification}</TextInfo4>
+                  <TextInfo4>{product.size}</TextInfo4>
+                  <TextInfo4>Estrelas({product.rating})</TextInfo4>
+                  <TextInfo4>({product.avaliations})</TextInfo4>
                 </Sumary>
               </div>
               <div>

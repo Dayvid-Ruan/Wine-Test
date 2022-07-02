@@ -7,7 +7,7 @@ import {
 import MyContext from "../context/MyContext";
 
 function ListProducts () {
-  const { filterProduct, hanlderClickInfo } = useContext(MyContext);
+  const { filterProduct, handerClickInfo } = useContext(MyContext);
   const [itensPerPage, ] = useState(9);
   const [currentPage, setCurrebtPage ] = useState(0);
 
@@ -22,7 +22,7 @@ function ListProducts () {
         currentItens.map(product => (
           <Global key={product.id}>
             <Card
-              onClick={ hanlderClickInfo }
+              onClick={ handerClickInfo }
             >
               <ImgProduct src={product.image } />
               <Name>{ product.name }</Name>
