@@ -7,7 +7,7 @@ import ListProducts from "../components/listProducts";
 import {QuantProduct, Catalago } from "../styles/productPageStyle";
 
 function Products () {
-  const { products } = useContext(MyContext);
+  const { filterProduct } = useContext(MyContext);
 
   return (
     <div>
@@ -15,10 +15,10 @@ function Products () {
       <FilterPrice />
       <Catalago>
         {
-          <QuantProduct>{`${products.length} produtos encontrados`}</QuantProduct >
+          <QuantProduct>{`${filterProduct.length} produtos encontrados`}</QuantProduct >
         }
         <ListProducts />
-      </Catalago>
+      </Catalago> 
     </div>
   );
 }

@@ -49,7 +49,7 @@ export const WineImg = styled.button`
 border-radius: 50%;
 border: none;
 cursor: pointer;
-background-color: #F6B554;
+background-color: #FFFFFF;
 margin-left: 50px;
 width: 56px;
 `;

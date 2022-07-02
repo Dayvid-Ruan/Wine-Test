@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import MyContext from "../context/MyContext";
 
 
 function SearchBar () {
-  const [busca, setBusca] = useState("");
+  const { handleChange } = useContext(MyContext);
 
   return(
     <div>
@@ -10,9 +11,8 @@ function SearchBar () {
         type="text"
         placeholder="Buscar"
         id="buscar"
-        name="buscar"
-        value={busca}
-        onChange={(e) => setBusca(e.target.value)}
+        name=""
+        onChange={handleChange}
       />
     </div>
   );
