@@ -25,7 +25,7 @@ function Header () {
       <DivPages>
         <Pages onClick={handerClickClub}><p>Clube</p></Pages>
         <Pages onClick={handlerClickProducts}><p>Loja</p></Pages>
-        <Pages onClick={handerClickProducers}><p>Prdutores</p></Pages>
+        <Pages onClick={handerClickProducers}><p>Produtores</p></Pages>
         <Pages onClick={handerClickOffers}><p>Ofertas</p></Pages>
         <Pages onClick={handerClickEvents}><p>Eventos</p></Pages>
       </DivPages>
